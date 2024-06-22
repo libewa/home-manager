@@ -92,41 +92,6 @@
         };
       };
     };
-    style = ''
-      * {
-	font-family: "Ubuntu Nerd Font";
-	font-size: 13px;
-      }
-      /*#window {
-	max-width = 350px;
-      }*/
-      window#waybar {
-	border: none;
-	border-radius: 0; 
-	min-height: 0;
-	background: none;
-	color: #fff;
-	padding-top: 2px;
-	padding-bottom: 2px
-      }
-
-      window#waybar {
-	/* From https://css.glass */
-	background: rgba(255, 255, 255, 0.1);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-	padding-left: 4px;
-	padding-right: 4px;
-      }
-
-      tooltip {
-	background: rgba(43, 48, 59, 0.9);
-	border: 1px solid rgba(100, 114, 125, 0.5);
-      }
-      #workspaces button {
-        color: white;
-	background: none;
-      }
-    '';
+    style = builtins.readFile ../dotfiles/waybar/style.css;
   };
 }
