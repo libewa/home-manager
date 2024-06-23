@@ -25,7 +25,21 @@
             ./home.nix
             ./guionly.nix
             ./modules/hyprland.nix
-            ./modules/waybar.nix
+            #./modules/waybar.nix
+	    {
+	      programs.waybar.enable = true;
+	      xdg.configFile.waybar.source = pkgs.fetchgit {
+	        url = "https://github.com/jakehamilton/dotfiles";
+		sparseCheckout = [
+		  "waybar"
+		];
+		hash = "sha256-2MLQkWWtj/NPvSHL2UQzNGTMq52TYy8Pl5yJnjCPLHk=";
+		postFetch = ''
+		  rm -rf dotbot flake.lock flake.nix install install.conf.yaml
+		  mv waybar/* .
+		'';
+	      };
+	    }
             ./modules/nvim
             ./modules/zsh.nix
             ./modules/vscode.nix
