@@ -28,6 +28,7 @@
             ./modules/waybar.nix
             ./modules/nvim
             ./modules/zsh.nix
+	    ./modules/cmatrix-wallpaper.nix
             ./modules/vscode.nix
 	    ./modules/zed.nix
 	    ./modules/rofi.nix
